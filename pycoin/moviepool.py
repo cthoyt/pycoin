@@ -35,3 +35,7 @@ class MoviePool():
             }
         else:
             raise MoviePoolDuplicateMovieError
+            
+    def remove_movie(self, identifier):
+        tmdb_id = self._tmdb_id_from_identifier(identifier)
+        self.pool.pop(tmdb_id)

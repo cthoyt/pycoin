@@ -95,3 +95,21 @@ def test_cannot_add_movie_twice_to_MoviePool(testPool, fake_tmdbsimple):
     with pytest.raises(MoviePoolDuplicateMovieError):
         testPool.add_movie('1')
     
+def test_remove_movie_by_tmdb_id_from_MoviePool(testPool, fake_tmdbsimple):
+    testPool.add_movie('1')
+    testPool.remove_movie('1')
+    assert testPool.pool == {}
+
+def test_remove_movie_by_imdb_id_from_MoviePool(testPool, fake_tmdbsimple):
+    testPool.add_movie('1')
+    testPool.remove_movie('tt1')
+    assert testPool.pool == {}
+    
+def test_remove_movie_by_title_from_MoviePool(testPool, fake_tmdbsimple):
+    testPool.add_movie('1')
+    testPool.remove_movie('Example Movie')
+    assert testPool.pool == {}
+    
+def test_remove_nonexistent_movie_from_MoviePool_raises_KeyError(testPool, fake_tmdbsimple):
+    with pytest.raises(KeyError):
+        testPool.remove_movie('1')
