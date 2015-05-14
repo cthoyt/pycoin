@@ -26,6 +26,10 @@ class PyTest(TestCommand):
 setup(
     name = 'pycoin',
     packages = ['pycoin'],
+    install_requires = [
+        'tmdbsimple==1.3.0',
+        'requests==2.5.3'
+    ],
     tests_require = ['pytest', 'pytest-cov'],
     cmdclass = {'test': PyTest}
 )
