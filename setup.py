@@ -26,6 +26,6 @@ class PyTest(TestCommand):
 setup(
     name = 'pycoin',
     packages = ['pycoin'],
-    tests_require = ['pytest'],
+    tests_require = ['pytest', 'pytest-cov'],
     cmdclass = {'test': PyTest}
 )
