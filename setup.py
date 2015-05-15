@@ -30,6 +30,10 @@ setup(
         'tmdbsimple==1.3.0',
         'requests==2.5.3'
     ],
-    tests_require = ['pytest', 'pytest-cov'],
+    tests_require = [
+        'pytest',
+        'pytest-cov',
+        'pytest-mock'
+    ],
     cmdclass = {'test': PyTest}
 )
