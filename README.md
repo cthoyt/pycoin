@@ -13,3 +13,5 @@ I recommend you install in a `virtualenv`. Using `virtualenvwrapper`:
 To run the tests:
 
     python setup.py test -a --cov=pycoin
+
+As of this time, the TMDb API key associated with this program is kept privately. To use your own TMDb API key, place it in `pycoin/private_constants.py.dist` and remove the `.dist` portion of the file name.
