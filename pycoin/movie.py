@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 import tmdbsimple as tmdb
+from . import private_constants
 
-tmdb.API_KEY = 'f184fcf64fe19365d01d5bec547156ef'
+tmdb.API_KEY = private_constants.API_KEY
 
 class Movie():
     def __init__(self, identifier):
