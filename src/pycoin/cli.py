@@ -4,9 +4,11 @@ import random
 
 import click
 import py
-from requests.exceptions import HTTPError
+from requests.exceptions import HTTPError  # TODO add to requirements?
 import tmdbsimple as tmdb
 
+
+# TODO pin versions?
 
 class PycoinError(Exception):
     """The base error from which all other errors used by this script are derived."""
