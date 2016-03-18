@@ -2,16 +2,16 @@
 
 `pycoin` is a command line utility to semi-randomly choose a movie to watch from the list of movies you would like to see.
 
-`pycoin` is being developed as an exercise in test-driven development. It is currently in a very incomplete state and will be updated as time allows. When I am comfortable with its completion level (basically, that it is useable in some form instead of just a collection of tests and classes as it is now), the license will be changed to be more permissive.
-
 ##Installation for Development
-I recommend you install in a `virtualenv`. Using `virtualenvwrapper`:
 
-    mkvirtualenv pycoin
-    python setup.py develop
+The best way to install `pycoin` at the moment is via the following procedure. In addition to the source of the script, which you can obtain via `git clone https://github.com/scolby33/pycoin.git`, this also requires `virtualenv` and `pip`. Most Python installations come with `pip`, but if yours does not, the docs [here](https://pip.pypa.io/en/stable/installing/) provide an overview of the process of getting this essential tool. Once `pip` is installed, getting `virtualenv` is as simple as `pip install virtualenv`.
 
-To run the tests:
+Once the requirements are met, switch to the root directory of the `pycoin` source (the folder containing `setup.py`) and execute the following commands:
 
-    python setup.py test -a --cov=pycoin
+```bash
+virtualenv venv
+source venv/bin/activate
+pip install --editable .
+```
 
-As of this time, the TMDb API key associated with this program is kept privately. To use your own TMDb API key, place it in `pycoin/private_constants.py.dist` and remove the `.dist` portion of the file name.
+Afterwards, `pycoin` can be executed by name as long as you're in the virtualenv. To leave the virtualenv, execute `deactivate`. To return to an existing installation, just navigate to the root directory of the `pycoin` source again and run `source venv/bin/activate`.
