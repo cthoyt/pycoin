@@ -20,7 +20,7 @@ CLASSIFIERS = [
     'Topic :: Multimedia :: Video',
     'Topic :: Utilities'
 ]
-INSTALL_REQUIRES = ['click', 'py', 'requests', 'tmdbsimple']
+INSTALL_REQUIRES = ['click', 'py', 'tmdbsimple']
 EXTRAS_REQUIRE = {}
 
 #################################################################
