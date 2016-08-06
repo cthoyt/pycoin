@@ -1,4 +1,4 @@
-"""Setup module for the pycoin script"""
+"""Setup module for the pycoin package"""
 
 import setuptools
 import codecs  # To use a consistent encoding
@@ -10,18 +10,29 @@ import re
 PACKAGES = setuptools.find_packages(where='src')
 META_PATH = os.path.join('src', 'pycoin', '__init__.py')
 KEYWORDS = ['movies', 'coin', 'what to watch']
+# complete classifier list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
 CLASSIFIERS = [
-    'Development Status :: 4 - Beta',
+    'Development Status :: 3 - Alpha',
     'Environment :: Console',
     'Intended Audience :: End Users/Desktop',
-    'License :: Other/Proprietary License',
+    'License :: OSI Approved :: MIT License',
     'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    # 'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3.5',
     'Topic :: Multimedia :: Video',
     'Topic :: Utilities'
 ]
-INSTALL_REQUIRES = ['click', 'py', 'tmdbsimple']
+INSTALL_REQUIRES = [
+    'click', 'py', 'tmdbsimple'
+]
 EXTRAS_REQUIRE = {}
+TESTS_REQUIRE = ['tox']
+ENTRY_POINTS = {
+    'console_scripts': [
+        'pycoin = pycoin.cli:main',
+    ]
+}
 
 #################################################################
 
@@ -48,11 +59,10 @@ def find_meta(meta):
 
 
 def get_long_description():
-    """Get the long_description from the README.md file. Assume UTF-8 encoding."""
-    with codecs.open(os.path.join(HERE, 'README.md'), encoding='utf-8') as f:
+    """Get the long_description from the README.rst file. Assume UTF-8 encoding."""
+    with codecs.open(os.path.join(HERE, 'README.rst'), encoding='utf-8') as f:
         long_description = f.read()
     return long_description
-
 
 if __name__ == '__main__':
     setuptools.setup(
@@ -71,9 +81,6 @@ if __name__ == '__main__':
         package_dir={'': 'src'},
         install_requires=INSTALL_REQUIRES,
         extras_require=EXTRAS_REQUIRE,
-        entry_points={
-            'console_scripts': [
-                'pycoin=pycoin.cli:cli'
-            ]
-        }
+        tests_require=TESTS_REQUIRE,
+        entry_points=ENTRY_POINTS
     )
