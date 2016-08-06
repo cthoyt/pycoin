@@ -7,6 +7,22 @@ include .codecov.yml
 include .coveragerc
 include .travis.yml
 
+graft .idea
+exclude .idea/workspace.xml
+exclude .idea/tasks.xml
+exclude .idea/dictionaries
+exclude .idea/vcs.xml
+exclude .idea/jsLibraryMappings.xml
+exclude .idea/dataSources.ids
+exclude .idea/dataSources.xml
+exclude .idea/dataSources.local.xml
+exclude .idea/sqlDataSources.xml
+exclude .idea/dynamic.xml
+exclude .idea/uiDesigner.xml
+exclude .idea/gradle.xml
+exclude .idea/libraries
+exclude .idea/mongoSettings.xml
+
 include tox.ini
 
 include *.rst
