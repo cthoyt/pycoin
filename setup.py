@@ -24,7 +24,7 @@ CLASSIFIERS = [
     'Topic :: Utilities'
 ]
 INSTALL_REQUIRES = [
-    'click', 'py', 'tmdbsimple'
+    'click', 'py', 'tmdbsimple', 'colorama'
 ]
 EXTRAS_REQUIRE = {}
 TESTS_REQUIRE = ['tox']
